@@ -1,0 +1,17 @@
+<div>
+  <li>
+    <h4>Lessons:</h4>
+  </li>
+<ul class="nav nav-tabs">
+  <li *ngFor="let lesson of lessons"
+      [ngClass]="{'list-group-item-info': lesson._id === lessonId}"
+      class="list-group-item">
+    <a
+      routerLink="/{{layout}}/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}/topics">
+      <!--      courses/:cid/modules/:mid/lessons-->
+      {{lesson.title}}
+    </a>
+  </li>
+
+</ul>
+</div>

@@ -1,0 +1,22 @@
+
+<!--This is CourseTable Component -->
+<table class="table table-hover">
+  <thead>
+ <tr>
+   <th>
+    <span><h4><i routerLink="/table/courses" class="fa fa-times-circle"></i> Course</h4> </span>
+<!--    <fa-icon [icon]="faTrash"></fa-icon>-->
+   </th>
+  </tr>
+  </thead>
+  <tbody>
+  <!--  ngFor - loops through set of courses -->
+  <tr *ngFor="let course of courses"
+      [ngClass]="{'list-group-item-info': course._id === courseId}"
+      class="list-group-item">
+    <a routerLink="/{{layout}}/courses/{{course._id}}/modules">
+      {{course.title}}
+    </a>
+  </tr>
+  </tbody>
+</table>

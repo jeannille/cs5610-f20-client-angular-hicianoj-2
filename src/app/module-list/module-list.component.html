@@ -1,0 +1,21 @@
+<!--<p>module-list works!</p>-->
+<h3> Course: {{course.title}}</h3>
+<ul class="list-group">
+
+  <li class="list-group-item">
+    <h4>Modules:</h4>
+  </li>
+
+  <li *ngFor="let module of modules"
+      [ngClass]="{'list-group-item-info': module._id === moduleId}"
+      class="list-group-item">
+    <a routerLink="/{{layout}}/courses/{{courseId}}/modules/{{module._id}}/lessons">
+<!--      courses/:cid/modules/:mid/lessons-->
+      {{module.title}}
+    </a>
+  </li>
+
+</ul>
+
+
+

@@ -1,0 +1,13 @@
+/*Specific styling for Course List component*/
+
+/*
+I added css to the general app.component.css file but the changes
+ did not take. The component css files seem to work.
+ */
+
+a {
+  text-decoration: none;
+  color: darkslategray;
+}
+
+

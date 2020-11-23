@@ -1,0 +1,103 @@
+<div class="container-fluid" id = "navigator" >
+
+  <div class="row">
+    <div class="col-3">
+      <h2> Course Table</h2>
+    </div>
+    <div class="col-9">
+      <h2>CourseViewer</h2>
+    </div>
+  </div>
+<!--------------------- content -->
+  <div class="row">
+
+    <div class="col-3 wbdv-course-table">
+      <app-course-list></app-course-list>
+    </div>
+
+    <div class="col-3 wbdv-modules">
+      <app-module-list></app-module-list>
+    </div>
+
+    <div class="col-6">
+
+      <div class="row-cols-1 wbdv-lessons">
+        <app-lesson-tabs></app-lesson-tabs>
+      </div> <br>
+
+      <div class="row-cols-1 wbdv-topics">
+        <app-topic-pills></app-topic-pills>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!--<app-course-list></app-course-list>-->
+<!--<app-module-list></app-module-list>-->
+<!--<app-lesson-tabs></app-lesson-tabs>-->
+<!--<app-topic-pills></app-topic-pills>-->
+<!--<app-widget-list></app-widget-list>-->
+
+<!--<div>-->
+<!--  <h1>Course Navigator</h1>-->
+<!--  <div class="row">-->
+<!--    <div class="col-4">-->
+<!--      <ul class="list-group">-->
+<!--        &lt;!&ndash;      highlight/display course as active if selected /&ndash;&gt;-->
+<!--        <li class="list-group-item active">-->
+<!--          Courses {{selectedCourse.title}}-->
+<!--        </li>-->
+<!--        &lt;!&ndash;      if this course is selected (value), we apply the class (key)&ndash;&gt;-->
+<!--        <li-->
+<!--          [ngClass]="{'list-group-item-success': course === selectedCourse}"-->
+<!--          (click)="selectCourse(course)" *ngFor="let course of courses"-->
+<!--          class="list-group-item">-->
+
+<!--          &lt;!&ndash;hide  edit / save accordingly&ndash;&gt;-->
+<!--          <span [hidden]="course.editing">{{course.title}}</span>-->
+<!--          &lt;!&ndash;        tied to a reference to course being iterated over, change title&ndash;&gt;-->
+<!--          <input [hidden]="!course.editing" [(ngModel)]="course.title"/>-->
+<!--          <button class="float-right" (click)="deleteCourse(course)">-->
+<!--            Delete-->
+<!--          </button>-->
+<!--          <button class="float-right" [hidden]="course.editing" (click)="editCourse(course)">-->
+<!--            Edit-->
+<!--          </button>-->
+<!--          <button class="float-right" [hidden]="!course.editing" (click)="saveCourse(course)">-->
+<!--            Save-->
+<!--          </button>-->
+<!--        </li>-->
+<!--        <li class="list-group-item">-->
+<!--          <button (click)="createCourse()">-->
+<!--            Create-->
+<!--          </button>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--    <div class="col-3">-->
+<!--      <ul class="list-group">-->
+<!--        <li class="list-group-item active">Modules</li>-->
+<!--        <li *ngFor="let module of modules"-->
+<!--            class="list-group-item">-->
+<!--          {{module.title}}-->
+<!--          <input [(ngModel)]="module.title"/>-->
+<!--          <button class="btn" (click)="deleteModule(module)">Delete</button>-->
+<!--          <button class="btn" (click)="saveModule(module)">Save</button>-->
+<!--        </li>-->
+<!--        <li class="list-group-item">-->
+<!--          <button (click)="createModuleForCourse(selectedCourse)">-->
+<!--            Create-->
+<!--          </button>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<div>
+  <li>
+    <h4>Topics:</h4>
+  </li>
+<ul class="nav nav-pills">
+<!--  <li class="list-group-item active">-->
+<!--    Topics -->
+<!--    {{topicId}}-->
+<!--  </li>-->
+  <li  *ngFor="let topic of topics" class="nav-item"
+       [ngClass]="{'list-group-item-info' : topic._id === topicId}">
+    <a
+      routerLink="/{{layout}}/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lessonId}}/topics/{{topic._id}}"
+    class = "nav-link">
+<!--      will display widgets for topic-->
+      {{topic.title}}
+    </a>
+<!--    courses/:cid/modules/:mid/lessons/:lid/topics-->
+<!--    <a class="nav-link" routerLink="#">{{topic.title}}</a>-->
+  </li>
+</ul>
+</div>
