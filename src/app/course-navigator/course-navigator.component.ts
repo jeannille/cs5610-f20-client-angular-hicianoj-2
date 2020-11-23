@@ -3,6 +3,7 @@ import {CourseService} from '../../services/course-service';
 import {ModuleService} from '../../services/ModuleService';
 import {ActivatedRoute} from '@angular/router';
 
+/* This is CourseViewerComponent*/
 @Component({
   selector: 'app-course-navigator',
   templateUrl: './course-navigator.component.html',
@@ -14,9 +15,12 @@ import {ActivatedRoute} from '@angular/router';
 export class CourseNavigatorComponent implements OnInit {
 // no state variables required needed in angular, states change automatically
   courses = [];
+  courseId;
+  course = {}
   modules = [];
   lessons = [];
   topics = [];
+  layout;
   selectedCourse = {
     title: ''
   }
@@ -36,18 +40,18 @@ export class CourseNavigatorComponent implements OnInit {
   editCourse = (course) =>
     course.editing = true;
 
-/* */
+  /* */
   saveCourse = (course) => {
     course.editing = false;
     this.courseService.updateCourse(course);
   }
-/*pass a reference to the course selected, assign to local variable, returns courses & its modules*/
+  /*pass a reference to the course selected, assign to local variable, returns courses & its modules*/
   selectCourse = (course) => {
     this.selectedCourse = course;
     this.moduleService.findModulesForCourse(course._id)
       .then(modules => this.modules = modules);
   }
-/*pass the course selected and render create a module for it*/
+  /*pass the course selected and render create a module for it*/
   createModuleForCourse = (selectedCourse) =>
     this.moduleService.createModuleForCourse(selectedCourse._id)
       .then(module => this.modules.push(module))
@@ -63,14 +67,25 @@ export class CourseNavigatorComponent implements OnInit {
   /* component constructor can instantiate courseService(), via Injectable */
   constructor(private courseService: CourseService,
               private moduleService: ModuleService,
-              private activatedRoute : ActivatedRoute
+              private activatedRoute: ActivatedRoute
   ) {
   }
+
   /* ngOnInit - componentDidMount, lifecycle function*/
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      console.log(params);
+      this.courseId = params.cid;
+      this.layout = params.layout;
+    });
 
+    // have course to render course title in CourseViewer on right
+    this.courseService.findCourseById(this.courseId)
+      .then(course => this.course = course);
     this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
+
+
   }
 
 //

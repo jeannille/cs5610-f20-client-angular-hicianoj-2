@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CourseService} from '../../services/course-service';
 import {ActivatedRoute} from '@angular/router';
-// import {ActivatedRoute} from '@angular/router';
+
 
 /*ts files hold the accompanying event handlers for the component*/
 

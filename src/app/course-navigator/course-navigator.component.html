@@ -9,6 +9,8 @@
     </div>
   </div>
 <!--------------------- content -->
+
+
   <div class="row">
 
     <div class="col-3 wbdv-course-table">
@@ -16,6 +18,10 @@
     </div>
 
     <div class="col-3 wbdv-modules">
+      <span>
+        <a routerLink = "/{{layout}}/courses">
+          <i class="fa fa-times-circle"></i>
+        </a> {{course.title}}</span>
       <app-module-list></app-module-list>
     </div>
 
