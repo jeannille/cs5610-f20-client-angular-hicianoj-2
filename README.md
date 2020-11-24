@@ -1,4 +1,4 @@
-## back up release for A7: https://github.com/jeannille/cs5610-f20-client-angular-hicianoj-2/releases/tag/v1.0
+## back up release for A7: https://github.com/jeannille/cs5610-f20-client-angular-hicianoj-2/releases/tag/1.1
 
 # Cs5610F20HicianojClientAngular
 
