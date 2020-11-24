@@ -1,3 +1,5 @@
+#Deployed on https://whiteboard-app-2.herokuapp.com/table/courses/
+
 ## back up release for A7: https://github.com/jeannille/cs5610-f20-client-angular-hicianoj-2/releases/tag/1.1
 
 # Cs5610F20HicianojClientAngular

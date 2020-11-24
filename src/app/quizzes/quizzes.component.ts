@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {QuizzesServiceClient} from '../../services/quiz.service.client';
 
 @Component({
   selector: 'app-quizzes',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizzesComponent implements OnInit {
 
-  constructor() { }
+  // use a service to retrieve all the quizzes and bind them to a local quizzes array.
+  constructor(private service: QuizzesServiceClient,
+              private route: ActivatedRoute) {
+  }
+
+  courseId = ''
+  quizzes = []
+  layout = ''
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.courseId = params.cid;
+      this.layout = params.layout;
+      console.log(params)
+      this.service.findAllQuizzes()
+        .then(quizzes => this.quizzes = quizzes);
+    });
   }
+
 
 }

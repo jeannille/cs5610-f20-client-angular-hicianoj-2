@@ -13,16 +13,15 @@
 
   <div class="row">
 
-    <div class="col-3 wbdv-course-table">
+    <div class="col-4 wbdv-course-table">
       <app-course-list></app-course-list>
     </div>
 
-    <div class="col-3 wbdv-modules">
+    <div class="col-2 wbdv-modules">
       <span>
         <a routerLink = "/{{layout}}/courses">
-          <i class="fa fa-times-circle"></i>
-        </a>
-        {{course["title"]}}
+          <i class="fa fa-times-circle"></i></a>
+        <h4>Course: {{course["title"]}}</h4>
 <!--      {{courseId}}-->
       </span>
       <app-module-list></app-module-list>

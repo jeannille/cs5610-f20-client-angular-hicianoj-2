@@ -14,7 +14,10 @@ import {CourseListComponent} from './course-list/course-list.component';
 import {LessonService} from '../services/LessonService';
 import {QuizzesServiceClient} from '../services/quiz.service.client';
 import {QuestionsServiceClient} from '../services/question.service.client';
-import { QuizzesComponent } from './quizzes/quizzes.component';
+import {QuizzesComponent} from './quizzes/quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
 
 // import { WidgetListComponent } from './widget-list/widget-list.component';
 
@@ -27,6 +30,9 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
     ModuleListComponent,
     CourseListComponent,
     QuizzesComponent,
+    QuizComponent,
+    TrueFalseQuestionComponent,
+    MultipleChoiceQuestionComponent,
     // WidgetListComponent
   ],
   imports: [

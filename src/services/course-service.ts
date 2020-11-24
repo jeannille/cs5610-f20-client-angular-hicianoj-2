@@ -11,7 +11,7 @@ able to inject into constructors of classes that will use CourseService  */
 export class CourseService {
 
   findAllCourses = () =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/hicianoj/courses`)
+    fetch(`http://wbdv-generic-server.herokuapp.com/api/hicianoj/courses`)
       .then(response => response.json());
 
 // find by Course Id
@@ -20,18 +20,18 @@ export class CourseService {
 //       .then(response => response.json());
 
   findCourseById = (courseId) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/hicianoj/courses/${courseId}`)
+    fetch(`http://wbdv-generic-server.herokuapp.com/api/hicianoj/courses/${courseId}`)
       .then(response => response.json())
 
   deleteCourse = (id) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/hicianoj/courses/${id}`, {
+    fetch(`http://wbdv-generic-server.herokuapp.com/api/hicianoj/courses/${id}`, {
       method: 'DELETE'
     })
       .then(response => response.json());
 
   /* */
   createCourse = () =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/hicianoj/courses`, {
+    fetch(`http://wbdv-generic-server.herokuapp.com/api/hicianoj/courses`, {
       method: 'POST',
       body: JSON.stringify({title: 'New Course', editing: false}),
       headers: {
@@ -43,7 +43,7 @@ export class CourseService {
 
   /* used by saveCourse, pass in course that is being editung */
   updateCourse = (course) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/hicianoj/courses/${course._id}`, {
+    fetch(`http://wbdv-generic-server.herokuapp.com/api/hicianoj/courses/${course._id}`, {
       method: 'PUT',
       body: JSON.stringify(course), /* sringigy course object being passed*/
       headers: {
