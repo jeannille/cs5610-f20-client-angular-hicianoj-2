@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cs5610-f20-hicianoj-client-angular": {
+    "cs5610-f20-hicianoj-client-angular-2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cs5610-f20-hicianoj-client-angular",
+            "outputPath": "dist/cs5610-f20-hicianoj-client-angular-2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cs5610-f20-hicianoj-client-angular:build"
+            "browserTarget": "cs5610-f20-hicianoj-client-angular-2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cs5610-f20-hicianoj-client-angular:build:production"
+              "browserTarget": "cs5610-f20-hicianoj-client-angular:build-2:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cs5610-f20-hicianoj-client-angular:build"
+            "browserTarget": "cs5610-f20-hicianoj-client-angular-2:build"
           }
         },
         "test": {
@@ -115,16 +115,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cs5610-f20-hicianoj-client-angular:serve"
+            "devServerTarget": "cs5610-f20-hicianoj-client-angular-2:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cs5610-f20-hicianoj-client-angular:serve:production"
+              "devServerTarget": "cs5610-f20-hicianoj-client-angular-2:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "cs5610-f20-hicianoj-client-angular"
+  "defaultProject": "cs5610-f20-hicianoj-client-angular-2"
 }
