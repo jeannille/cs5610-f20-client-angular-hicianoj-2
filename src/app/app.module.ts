@@ -12,6 +12,9 @@ import {ModuleService} from '../services/ModuleService';
 import {ModuleListComponent} from './module-list/module-list.component';
 import {CourseListComponent} from './course-list/course-list.component';
 import {LessonService} from '../services/LessonService';
+import {QuizzesServiceClient} from '../services/quiz.service.client';
+import {QuestionsServiceClient} from '../services/question.service.client';
+import { QuizzesComponent } from './quizzes/quizzes.component';
 
 // import { WidgetListComponent } from './widget-list/widget-list.component';
 
@@ -23,6 +26,7 @@ import {LessonService} from '../services/LessonService';
     TopicPillsComponent,
     ModuleListComponent,
     CourseListComponent,
+    QuizzesComponent,
     // WidgetListComponent
   ],
   imports: [
@@ -33,7 +37,10 @@ import {LessonService} from '../services/LessonService';
   providers: [
     CourseService,
     ModuleService,
-    LessonService
+    LessonService,
+    QuizzesServiceClient, // WD8
+    QuestionsServiceClient // WD8
+
   ],
   bootstrap: [AppComponent]
 })

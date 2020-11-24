@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {CourseNavigatorComponent} from './course-navigator/course-navigator.component';
+import {QuizzesComponent} from './quizzes/quizzes.component';
 
 // similar to routing in react, display certain components at certain routes
 const routes: Routes = [
@@ -10,11 +11,15 @@ const routes: Routes = [
   {path: ':layout/courses/:cid/modules', component: CourseNavigatorComponent},
   {path: ':layout/courses/:cid/modules/:mid/lessons', component: CourseNavigatorComponent},
   {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics', component: CourseNavigatorComponent},
-  {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics/:tid', component: CourseNavigatorComponent}
+  {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics/:tid', component: CourseNavigatorComponent},
+
+  // WD8
+  {path: 'courses/:courseId/quizzes', component: QuizzesComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
