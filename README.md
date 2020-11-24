@@ -1,3 +1,5 @@
+## back up release for A7: https://github.com/jeannille/cs5610-f20-client-angular-hicianoj-2/releases/tag/v1.0
+
 # Cs5610F20HicianojClientAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
