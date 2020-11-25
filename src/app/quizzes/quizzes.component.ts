@@ -23,6 +23,10 @@ export class QuizzesComponent implements OnInit {
       this.courseId = params.cid;
       this.layout = params.layout;
       console.log(params)
+      /*
+       use the question service to retrieve all the quesions for the current quiz
+       and bind them to a local questions array
+       */
       this.service.findAllQuizzes()
         .then(quizzes => this.quizzes = quizzes);
     });
