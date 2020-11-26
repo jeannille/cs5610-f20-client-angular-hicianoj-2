@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CourseNavigatorComponent} from './course-navigator/course-navigator.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LessonTabsComponent} from './lesson-tabs/lesson-tabs.component';
 import {TopicPillsComponent} from './topic-pills/topic-pills.component';
 import {CourseService} from '../services/course-service';
@@ -18,8 +18,8 @@ import {QuizzesComponent} from './quizzes/quizzes.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
-
 // import { WidgetListComponent } from './widget-list/widget-list.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { MultipleChoiceQuestionComponent } from './multiple-choice-question/mult
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CourseService,

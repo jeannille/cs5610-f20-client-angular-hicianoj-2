@@ -1,0 +1,31 @@
+
+
+.correctAnswer{
+ color: red;
+  background-color: palevioletred;
+}
+.list-group-item{
+  display: flex;
+
+}
+
+label {
+  display: block;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+/*.bold {*/
+/*  font-weight: bold;*/
+/*}*/
+/*.red {*/
+/*  color: red;*/
+/*}*/
+/*.has-error {*/
+/*  color: red;*/
+/*  background-color: yellow;*/
+/*}*/
+/*.orange {*/
+/*  color: orange;*/
+/*}*/

@@ -1,10 +1,70 @@
-<p>true-false-question works!</p>
+<!--https://material.angular.io/components/radio/examples-->
+<!--question parent component iterates over questions arr.
+this is one question in the array -->
+<!--   html knows that name attribute in radio input, browser manages their states-->
+<!--    https://docs.angularjs.org/api/ng/input/input%5Bradio%5D-->
 
-<div>
-  <h3> {{question.question}}</h3>
-<ul>
-  <input type="radio" value="True" > True
-  <input type="radio" value="False" > False
+<h3>
+    {{ question.question }}
+    <div class="" [hidden]="grading == false">
+      <div class="" [hidden]=" question.answer !== question.correct ">
+        <i class="fa fa-check"></i>
+      </div>
+      <div class="float-right" [hidden]="question.answer === question.correct">
+        <i class="fa fa-times"></i>
+      </div>
+    </div>
+</h3>
 
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let choiceItem of choices"
+      [ngClass]="{
+        'list-group-item-success': (
+          grading && question.correct === question.answer
+          && question.correct === choiceItem)
+          ||
+          (grading && question.correct !== question.answer
+          && question.correct === choiceItem),
+          'list-group-item-danger': grading
+          && question.correct !== question.answer
+          && question.correct !== choiceItem}">
+    {{choiceItem}}
+    <input type="radio" name="{{question._id}}" value="{{choiceItem}}"
+           [(ngModel)]="question.answer"/>
+    <div class="float-right" [hidden]="grading == false">
+      <div class="float-right" [hidden]=" choiceItem !== question.correct ">
+        <i class="fa fa-check"></i>
+      </div>
+      <div class="float-right" [hidden]="question.answer === question.correct">
+        <div class="float-right" [hidden]="question.answer !== choiceItem">
+          <i class="fa fa-times"></i></div>
+      </div>
+    </div>
+  </li>
 </ul>
-</div>
+<button class="btn btn-info" (click)="grade()">
+  Grade
+</button>
+<!--  [ngClass]="{ 'float-right': (question.correct !== question.answer)}"-->
+<!--</form>-->
+
+<div>Your selected answer: {{question.answer}}</div>
+<!--  <div> correct answer {{question.correct}}</div>-->
+<!--  <div>radioVal is now {{radioVal}}</div>-->
+
+
+<!-- The question should be rendered at the top of the component,
+then radio buttons representing the true and false choices, the answer
+selected, and then a grade button. The radio buttons should be mutually
+ exclusive and independent from other questions. This can be achieved by
+using the unique ID of the question as the name for the radio buttons-->
+
+<!--  When the user makes a selection, the answer is shown.
+When the user clicks on the grade button, the correct answer is highlighted green
+and, if selected, the wrong answer is highlighted red. A checkmark is rendered
+next to the question if it was answered correctly and an X is rendered otherewise.
+ Use the wireframes as a guideline. -->
+
+
+

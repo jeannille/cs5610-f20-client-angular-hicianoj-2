@@ -1,1 +1,60 @@
-<p>multiple-choice-question works!</p>
+<!-- Multiple Choice Question rendered, passed to Quiz Component -->
+
+  <h4>
+    <div class="row">
+      {{ question.question }}
+
+      <div class="" [hidden]="grading == false">
+        <div class="" [hidden]=" question.answer !== question.correct ">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="float-right" [hidden]="question.answer === question.correct">
+          <i class="fa fa-times"></i>
+        </div>
+      </div>
+    </div>
+  </h4>
+<br>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let choiceItem of question.choices"
+      [ngClass]="{'list-group-item-success': (
+          grading === true && question.correct === question.answer
+          && question.correct === choiceItem)
+          || (grading === true
+          && question.correct !== question.answer
+          && question.correct === choiceItem),
+          'list-group-item-danger': grading === true
+          && question.correct !== question.answer
+          && question.answer === choiceItem
+      }">
+    {{choiceItem}}
+    <input type="radio" name="{{question._id}}" [(ngModel)]="question.answer" value="{{choiceItem}}"
+    />
+    <div class="float-right" [hidden]="grading == false">
+      <div class="float-right" [hidden]=" choiceItem !== question.correct ">
+        <!--        trying faCheck from hw suggestion -->
+        <!--        <fa-icon [icon]="faCheck"></fa-icon>-->
+        <i class="fa fa-check"></i>
+      </div>
+      <div [hidden]="question.answer === question.correct" class="float-right">
+        <div class="float-right" [hidden]="question.answer !== choiceItem">
+          <!--          <fa-icon [icon]="faTimes"></fa-icon>-->
+          <i class="fa fa-times"></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<br>
+<div> You selected answer: {{question.answer}}</div>
+<div>
+  <!--  when user clicks on grade btn, should reveal check icon if correct, times if not-->
+  <button class="btn btn-success" (click)="grade()"> Grade</button>
+</div>
+
+<!--When the user makes a selection, the answer is shown. When the user clicks
+ on the grade button, the correct answer is highlighted green and, if selected,
+ the wrong answer is highlighted red. A checkmark is rendered next to the question
+  if it was answered correctly and an X is rendered otherwise. -->
+
