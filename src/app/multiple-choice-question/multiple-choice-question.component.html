@@ -4,8 +4,8 @@
     <div class="row">
       {{ question.question }}
 
-      <div class="" [hidden]="grading == false">
-        <div class="" [hidden]=" question.answer !== question.correct ">
+      <div [hidden]="grading == false">
+        <div [hidden]=" question.answer !== question.correct ">
           <i class="fa fa-check"></i>
         </div>
         <div class="float-right" [hidden]="question.answer === question.correct">
@@ -28,9 +28,9 @@
           && question.correct !== question.answer
           && question.answer === choiceItem
       }">
-    {{choiceItem}}
+<span>
     <input type="radio" name="{{question._id}}" [(ngModel)]="question.answer" value="{{choiceItem}}"
-    />
+    />  {{choiceItem}}</span>
     <div class="float-right" [hidden]="grading == false">
       <div class="float-right" [hidden]=" choiceItem !== question.correct ">
         <!--        trying faCheck from hw suggestion -->
@@ -47,10 +47,12 @@
   </li>
 </ul>
 <br>
-<div> You selected answer: {{question.answer}}</div>
+<br>
+<div><b>Your selected answer: {{question.answer}}</b></div>
+<br>
 <div>
   <!--  when user clicks on grade btn, should reveal check icon if correct, times if not-->
-  <button class="btn btn-success" (click)="grade()"> Grade</button>
+  <button class="btn btn-info" (click)="grade()"> Grade</button>
 </div>
 
 <!--When the user makes a selection, the answer is shown. When the user clicks

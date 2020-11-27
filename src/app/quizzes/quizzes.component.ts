@@ -20,7 +20,7 @@ export class QuizzesComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.courseId = params.cid;
+      this.courseId = params.courseId;
       this.layout = params.layout;
       console.log(params)
       /*

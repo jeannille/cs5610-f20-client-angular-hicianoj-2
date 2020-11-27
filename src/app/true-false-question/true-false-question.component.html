@@ -4,17 +4,18 @@ this is one question in the array -->
 <!--   html knows that name attribute in radio input, browser manages their states-->
 <!--    https://docs.angularjs.org/api/ng/input/input%5Bradio%5D-->
 
-<h3>
-    {{ question.question }}
-    <div class="" [hidden]="grading == false">
-      <div class="" [hidden]=" question.answer !== question.correct ">
-        <i class="fa fa-check"></i>
-      </div>
-      <div class="float-right" [hidden]="question.answer === question.correct">
-        <i class="fa fa-times"></i>
-      </div>
+<h4>
+  <div class="row">
+  {{ question.question }}
+  <div class="" [hidden]="grading == false">
+    <div class="" [hidden]=" question.answer !== question.correct ">
+      <i class="fa fa-check"></i>
     </div>
-</h3>
+    <div class="float-right" [hidden]="question.answer === question.correct">
+      <i class="fa fa-times"></i>
+    </div>
+  </div></div>
+</h4>
 
 
 <ul class="list-group">
@@ -29,9 +30,10 @@ this is one question in the array -->
           'list-group-item-danger': grading
           && question.correct !== question.answer
           && question.correct !== choiceItem}">
-    {{choiceItem}}
+<span>
     <input type="radio" name="{{question._id}}" value="{{choiceItem}}"
            [(ngModel)]="question.answer"/>
+  {{choiceItem}} </span>
     <div class="float-right" [hidden]="grading == false">
       <div class="float-right" [hidden]=" choiceItem !== question.correct ">
         <i class="fa fa-check"></i>
@@ -42,14 +44,20 @@ this is one question in the array -->
       </div>
     </div>
   </li>
-</ul>
-<button class="btn btn-info" (click)="grade()">
-  Grade
-</button>
+</ul> <br>
+<div>
+
+
 <!--  [ngClass]="{ 'float-right': (question.correct !== question.answer)}"-->
 <!--</form>-->
 
-<div>Your selected answer: {{question.answer}}</div>
+<div><b>Your selected answer: {{question.answer}}</b></div>
+<br>
+  <button class="btn btn-info" (click)="grade()">
+    Grade
+  </button>
+</div>
+<br>
 <!--  <div> correct answer {{question.correct}}</div>-->
 <!--  <div>radioVal is now {{radioVal}}</div>-->
 

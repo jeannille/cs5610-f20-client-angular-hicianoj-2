@@ -1,15 +1,15 @@
-<p>quiz works!</p>
+
 <!-- Iterates over the questions and renders them as a list. Depending on the
 type of question, render either a true false question or multiple choice question-->
-
-<ul class="list-group">
+<div class= "container test1">
+<div class = "row test2">
+<ul class="list-group test3">
   <li *ngFor="let question of questions" class="list-group-item">
-    <div [ngSwitch]="question.type">
+    <div [ngSwitch]="question.type" class="question-item">
       <app-multiple-choice-question
         [question]="question"
         *ngSwitchCase="'MULTIPLE_CHOICE'">
       </app-multiple-choice-question>
-      <br>
       <app-true-false-question
         [question]="question"
         *ngSwitchCase="'TRUE_FALSE'">
@@ -17,4 +17,6 @@ type of question, render either a true false question or multiple choice questio
     </div>
   </li>
 </ul>
+</div>
+</div>
 

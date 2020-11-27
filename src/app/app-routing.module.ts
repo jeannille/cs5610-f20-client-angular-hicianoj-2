@@ -15,8 +15,8 @@ const routes: Routes = [
   {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics/:tid', component: CourseNavigatorComponent},
 
   // WD8
-  {path: ':layout/courses/:cid/quizzes', component: QuizzesComponent},
-  { path: ':layout/courses/:courseId/quizzes/:quizId', component: QuizComponent }
+  {path: 'courses/:courseId/quizzes', component: QuizzesComponent},
+  { path: 'courses/:courseId/quizzes/:quizId', component: QuizComponent }
 
 ];
 

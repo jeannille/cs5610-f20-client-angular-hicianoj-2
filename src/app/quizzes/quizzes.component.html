@@ -1,18 +1,20 @@
-<p>quizzes works!</p>
+<!--<p>quizzes works!</p>-->
 <!--
 Link the quiz title and a button to quiz component created in a later sectio-->
+<div class = "container-fluid">
 <h2>Quizzes</h2>
 <ul class="list-group">
 <!--  Quizzes component - iterate over the quizzes and render them as a list. -->
   <li *ngFor="let quiz of quizzes" class="list-group-item">
-    <a routerLink="/{{layout}}/courses/{{courseId}}/quizzes/{{quiz._id}}">
+    <a routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}">
       {{quiz.title}}
     </a>
     <a class="btn btn-primary float-right"
-     routerLink="/{{layout}}/courses/{{courseId}}/quizzes/{{quiz._id}}">
+     routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}">
       Start
     </a>
   </li>
 </ul>
+</div>
 
 

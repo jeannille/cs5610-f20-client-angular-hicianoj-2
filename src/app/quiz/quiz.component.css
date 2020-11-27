@@ -1,5 +1,16 @@
 
-.list-group-item{
-  display: flex;
+/*.list-group-item{*/
+/*  display: flex;*/
+
+/*}*/
+
+/*.list-group{*/
+/*  display: flex;*/
+/*}*/
+
+
+
+.question-item{
+  margin: 20px;
 
 }
