@@ -8,11 +8,11 @@ this is one question in the array -->
   <div class="row">
   {{ question.question }}
   <div class="" [hidden]="grading == false">
-    <div class="" [hidden]=" question.answer !== question.correct ">
-      <i class="fa fa-check"></i>
+    <div class="float-right" [hidden]=" question.answer !== question.correct ">
+      <i class="fa fa-check float-right"></i>
     </div>
     <div class="float-right" [hidden]="question.answer === question.correct">
-      <i class="fa fa-times"></i>
+      <i class="fa fa-times float-right"></i>
     </div>
   </div></div>
 </h4>
@@ -36,11 +36,11 @@ this is one question in the array -->
   {{choiceItem}} </span>
     <div class="float-right" [hidden]="grading == false">
       <div class="float-right" [hidden]=" choiceItem !== question.correct ">
-        <i class="fa fa-check"></i>
+        <i class="fa fa-check float-right"></i>
       </div>
       <div class="float-right" [hidden]="question.answer === question.correct">
         <div class="float-right" [hidden]="question.answer !== choiceItem">
-          <i class="fa fa-times"></i></div>
+          <i class="fa fa-times float-right"></i></div>
       </div>
     </div>
   </li>
@@ -58,7 +58,7 @@ this is one question in the array -->
   </button>
 </div>
 <br>
-<!--  <div> correct answer {{question.correct}}</div>-->
+  <div> correct answer {{question.correct}}</div>
 <!--  <div>radioVal is now {{radioVal}}</div>-->
 
 

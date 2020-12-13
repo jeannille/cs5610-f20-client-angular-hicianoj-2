@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
+import { EventEmitter } from '@angular/core';
 
 /* https://www.freakyjolly.com/how-to-show-radio-input-listing-in-angular-6/#.X78SshNKiHE*/
 
@@ -27,6 +28,13 @@ export class TrueFalseQuestionComponent implements OnInit {
   @Input()
   question = {_id: '', title: '', question: '', answer: '', correct: ''}
 
+  // wd 9
+  @Input()
+  answer = '';
+
+  @Output()
+  answerChange = new EventEmitter<string>();
+
   // when radio is clicked, save its value
   clicked() {
     this.clickedRadio = this.choices.find(choice => choice === this.selectedRadio);
@@ -49,6 +57,8 @@ export class TrueFalseQuestionComponent implements OnInit {
 
   submit() {
     // this.question.answer = JSON.stringify(this.form.value);
+    this.answerChange.emit(this.answer);
+    this.grade();
     console.log('---------' + this.radioVal)
     console.log('current picked answer is' + this.question.answer)
     console.log('you are ' + this.isCorrect() + 'the answer is' +
